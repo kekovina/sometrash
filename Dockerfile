@@ -4,7 +4,7 @@ RUN apt update && apt install -y imagemagick
 
 RUN echo "FLAG is ${CTF_FLAG}" > /etc/passwd
 
-RUN useradd www-data
+RUN useradd -g www-data www-data
 
 COPY --chown=www-data:www-data src/ /var/www/html/
 
