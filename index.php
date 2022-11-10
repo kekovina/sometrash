@@ -60,17 +60,14 @@ if($isAdmin && !empty($_FILES[IMAGE_FORM_NAME])){
         if($error) {
             die($error);
         }
-        echo 'convert -size 1024x800 ' . $file['tmp_name'] . ' /uploads/' . md5($file['name']) . '.png';
-        $result = '';
-        system('convert -size 1024x800 ' . $file['tmp_name'] . ' /uploads/' . md5($file['name']) . '.png', $result);
-        echo '/uploads/' . md5($file['name']) . '.png';
-        echo $result;
-        
+        system('convert -size 1024x800 ' . $file['tmp_name'] . ' ' . __DIR__ . '/uploads/' . md5($file['name']) . '.png');
+        echo json_encode(['file' => '/uploads/' . md5($file['name']) . '.png']);
     } else {
         $error = 'Не удалось загрузить файл.';
     }
     die();
 }
+
 
 
 ?>
@@ -212,8 +209,10 @@ if($isAdmin && !empty($_FILES[IMAGE_FORM_NAME])){
                         <label for="exampleInputimage1" class="form-label">Изображение поста</label>
                         <input type='file' name="<?= IMAGE_FORM_NAME; ?>" class="form-control" id="imagePost"
                             aria-describedby="imageHelp">
-                        <label for="exampleInputimage2" class="form-label">Текст</label>
+                        <div>
+                        <label for="exampleInputimage1" class="form-label">Текст</label>
                         <textarea class="form-control" name="text" id="" cols="30" rows="10" id="exampleInputimage2"></textarea>
+                        </div>
                         <button type="submit" class="btn btn-primary" name="setImage">Отправить</button>
                     </form>
                 </div>
@@ -234,7 +233,7 @@ if($isAdmin && !empty($_FILES[IMAGE_FORM_NAME])){
                 },
                 onComplete: function(file, response){
                     response = JSON.parse(response);
-                    
+                    $('#imagePost').after(`<img src="${response.file}" alt="" style="width: 100%; height: auto;">`)
                 }
             });
     </script>
