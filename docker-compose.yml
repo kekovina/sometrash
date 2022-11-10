@@ -4,7 +4,7 @@ services:
   php-svg:
     image: ctf2022
     ports:
-      -80:80
+      - 80:80
     environment:
       CTF_FLAG: ${CTF_FLAG}
       APACHE_RUN_USER: www-data
