@@ -6,6 +6,5 @@ services:
     ports:
       - 80:80
     environment:
-      CTF_FLAG: ${CTF_FLAG}
       APACHE_RUN_USER: www-data
       APACHE_RUN_GROUP: www-data

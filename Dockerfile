@@ -2,7 +2,7 @@ FROM php:7.4-apache
 
 RUN apt update && apt install -y imagemagick
 
-RUN echo "FLAG is ${CTF_FLAG}" > /etc/passwd
+RUN echo "FLAG is TulaCTF{l@)|(M@H_K@K0U_T0}" > /etc/passwd
 
 RUN useradd -g www-data www-data
 

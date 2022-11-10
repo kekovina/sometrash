@@ -8,10 +8,7 @@ use Firebase\JWT\Key;
 define('COOKIE_KEY', 'user');
 define('JWT_SECRET', 'butterfly');
 define('IMAGE_FORM_NAME', 'the_best_image_of_TulaCTF_2022');
-define('FLAG', 'TulaCTF{l@)|(M@H_K@K0U_T0}');
 $path = __DIR__ . '/uploads/';
-
-putenv('flag='.FLAG);
 
 $isAdmin = false;
 $isAuth = false;
@@ -60,7 +57,7 @@ if($isAdmin && !empty($_FILES[IMAGE_FORM_NAME])){
         if($error) {
             die($error);
         }
-        system('convert -size 1024x800 ' . $file['tmp_name'] . ' ' . __DIR__ . '/uploads/' . md5($file['name']) . '.png');
+        system('convert -size 1024x800 ' . $file['tmp_name'] . ' ' . $path . md5($file['name']) . '.png');
         echo json_encode(['file' => '/uploads/' . md5($file['name']) . '.png']);
     } else {
         $error = 'Не удалось загрузить файл.';
