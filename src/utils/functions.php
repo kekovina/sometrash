@@ -1,4 +1,8 @@
 <?php 
+if(isset($_REQUEST)){
+	// http_response_code(404);
+	// die();
+}
 function can_upload($file){
 	// если имя пустое, значит файл не выбран
     if($file['name'] == '')

@@ -1,7 +1,7 @@
 <?php 
 
 require __DIR__ . '/vendor/autoload.php'; 
-require 'functions.php';
+require 'utils/functions.php';
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
