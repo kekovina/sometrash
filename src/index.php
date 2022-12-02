@@ -91,6 +91,9 @@ if($isAdmin && !empty($_FILES[IMAGE_FORM_NAME])){
 .form-wrap {
     height: 100vh;
 }
+body{
+    background: #f5f5f5;
+}
 </style>
 
 <body>
@@ -98,7 +101,7 @@ if($isAdmin && !empty($_FILES[IMAGE_FORM_NAME])){
         <header class="d-flex flex-wrap justify-content-md-center justify-content-between py-3 mb-4 border-bottom">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
 
-                <span class="fs-4">ElonMusktter</span>
+                <span class="fs-4">Прослушано в Гостинке</span>
             </a>
 
             <ul class="nav nav-pills">
@@ -117,45 +120,46 @@ if($isAdmin && !empty($_FILES[IMAGE_FORM_NAME])){
                 <?php }?>
             </ul>
         </header>
-        <div class="row">
-            <div class="col-md-4 my-2">
+        <div class="row" style="max-width: 600px; margin: 0 auto;">
+            <div class="col-12 my-2">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/public/img/dora.jpg"" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Заголовок карточки</h5>
-                        <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                            составлять основную часть содержимого карты.</p>
+                        <p class="card-text">Люблю Дору<br>Анон</p>
+                        
                         <div class="text-muted">2 часа назад</div>
                         <?php if($isAuth){ ?>
-                        <a href="#" class="btn btn-light like-btn"><i class="bi bi-star"></i></a>
+                        <a href="#" class="btn btn-light like-btn"><i class="bi bi-heart"></i></a>
                         <?php } ?>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 my-2">
+            <div class="col-12 my-2">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Заголовок карточки</h5>
-                        <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                            составлять основную часть содержимого карты.</p>
+                        <p class="card-text">понравился мальчик, ехали на 35 лайне в мясново 1 декабря в 17:45, сидели рядом в конце салона, я вышла у медсанчасти №5, а ты поехал дальше<br>
+Найтись пожалуйста 🙏<br>
+Анон<br>
+Адмиру печенек с корицей 🍪💗</p>
                         <div class="text-muted">14 часов назад</div>
                         <?php if($isAuth){ ?>
-                        <a href="#" class="btn btn-light like-btn"><i class="bi bi-star"></i></a>
+                        <a href="#" class="btn btn-light like-btn"><i class="bi bi-heart"></i></a>
                         <?php } ?>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 my-2">
+            
+            <div class="col-12 my-2">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                <iframe height="300" src="https://www.youtube.com/embed/jumQ76GEYLQ?start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe height="300" src="https://www.youtube.com/embed/JsD5jUralB8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="card-body">
-                        <h5 class="card-title">Заголовок карточки</h5>
-                        <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                            составлять основную часть содержимого карты.</p>
+                        <p class="card-text">Помогите выбрать мелодию для будильника пж<br>
+                        Админу печенек<br>
+                        Анон</p>
                         <div class="text-muted">вчера в 04:21</div>
                         <?php if($isAuth){ ?>
-                        <a href="#" class="btn btn-light like-btn"><i class="bi bi-star"></i></a>
+                        <a href="#" class="btn btn-light like-btn"><i class="bi bi-heart"></i></a>
                         <?php } ?>
                     </div>
                 </div>
@@ -242,12 +246,12 @@ if($isAdmin && !empty($_FILES[IMAGE_FORM_NAME])){
         location.reload();
     }
     $('.like-btn').click(function() {
-        if ($(this).find('i').hasClass('bi-star-fill')) {
-            $(this).find('i').removeClass('bi-star-fill');
-            $(this).find('i').addClass('bi-star');
+        if ($(this).find('i').hasClass('bi-heart-fill')) {
+            $(this).find('i').removeClass('bi-heart-fill');
+            $(this).find('i').addClass('bi-heart');
         } else {
-            $(this).find('i').removeClass('bi-star');
-            $(this).find('i').addClass('bi-star-fill');
+            $(this).find('i').removeClass('bi-heart');
+            $(this).find('i').addClass('bi-heart-fill');
         }
     });
     </script>
